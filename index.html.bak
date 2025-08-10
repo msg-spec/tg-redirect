@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AstroPulse | Переход в бота</title>
+  <meta name="description" content="Внимание! TikTok блокирует переход в Telegram. Открой в браузере, затем нажми кнопку." />
+  <meta property="og:title" content="AstroPulse | Переход в бота" />
+  <meta property="og:description" content="Внимание! TikTok блокирует переход в Telegram. Открой в браузере, затем нажми кнопку." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#000000" />
+  <style>
+    :root { --bg:#0b0b0b; --text:#f3f3f3; --muted:#b3b3b3; --accent:#ffffff; --btn:#ffffff; --btnText:#000000; --ring:rgba(255,255,255,.3); }
+    * { box-sizing: border-box; }
+    html,body { height:100%; }
+    body {
+      margin:0; background: radial-gradient(1200px 800px at 50% -10%, #1a1a1a, var(--bg));
+      color:var(--text); font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+      display:flex; align-items:center; justify-content:center; padding:24px;
+    }
+    .card {
+      width:100%; max-width:560px; background: rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:28px 24px 20px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    h1 { margin:0 0 16px; font-size:22px; letter-spacing:.2px; }
+    .alert { font-weight:600; margin-bottom:10px; }
+    .steps { margin:0 0 18px; color:var(--muted); }
+    .steps li { margin:6px 0; }
+    .btn {
+      display:inline-block; width:100%; text-align:center; text-decoration:none;
+      background:var(--btn); color:var(--btnText); font-weight:700; padding:14px 18px; border-radius:14px;
+      box-shadow: 0 10px 30px rgba(255,255,255,.12);
+      transition: transform .08s ease, box-shadow .2s ease;
+      border:1px solid rgba(255,255,255,.5);
+    }
+    .btn:focus-visible { outline: none; box-shadow: 0 0 0 6px var(--ring); }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 14px 36px rgba(255,255,255,.18); }
+    .sub {
+      margin-top:16px; text-align:center; color:var(--muted); font-size:14px;
+    }
+    .wish { margin-top:6px; text-align:center; font-size:14px; opacity:.9; }
+    .foot { margin-top:16px; text-align:center; font-size:13px; color:var(--muted); }
+    .dotlist { list-style:none; padding:0; }
+    .dotlist li::before { content:"•"; margin-right:8px; }
+  </style>
+  <script>
+    // Если открыто внутри WebView TikTok — мягкое напоминание открыть в браузере
+    document.addEventListener('DOMContentLoaded', () => {
+      const ua = navigator.userAgent.toLowerCase();
+      if (ua.includes('tiktok')) {
+        document.title = 'Открой в браузере → затем переход';
+      }
+    });
+  </script>
+</head>
+<body>
+  <main class="card" role="main" aria-label="Инструкция перехода в Telegram">
+    <h1>AstroPulse | Переход в бота</h1>
+
+    <div class="alert">Внимание! TikTok блокирует переход в Telegram.</div>
+    <div class="steps">Чтобы всё работало:</div>
+    <ul class="dotlist steps" aria-label="Шаги">
+      <li>Нажми <strong>•••</strong> (правый верхний угол)</li>
+      <li>Выбери <strong>«Открыть в браузере»</strong></li>
+      <li>И только потом нажми кнопку</li>
+    </ul>
+
+    <!-- ЗАМЕНИ ССЫЛКУ НИЖЕ НА СВОЮ -->
+    <a class="btn" href="https://t.me/astropulse_official" rel="noopener" target="_blank" aria-label="Перейти в канал в Telegram">
+      Перейти в канал
+    </a>
+
+    <div class="wish">✨ Загадать желание</div>
+    <div class="sub">Ты — один из тех, кто чувствует вибрации Вселенной. Мы ждём тебя.</div>
+
+    <div class="foot">© AstroPulse</div>
+  </main>
+</body>
+</html>
