@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AstroPulse | Переход в бота</title>
+  <title>Звезды и Числа | Переход в бота</title>
   <meta name="description" content="Внимание! TikTok блокирует переход в Telegram. Открой в браузере, затем нажми кнопку." />
-  <meta property="og:title" content="AstroPulse | Переход в бота" />
+  <meta property="og:title" content="Звезды и Числа | Переход в бота" />
   <meta property="og:description" content="Внимание! TikTok блокирует переход в Telegram. Открой в браузере, затем нажми кнопку." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#000000" />
@@ -57,7 +57,7 @@
 </head>
 <body>
   <main class="card" role="main" aria-label="Инструкция перехода в Telegram">
-    <h1>AstroPulse | Переход в бота</h1>
+    <h1>Звезды и Числа | Переход в бота</h1>
 
     <div class="alert">Внимание! TikTok блокирует переход в Telegram.</div>
     <div class="steps">Чтобы всё работало:</div>
@@ -68,14 +68,14 @@
     </ul>
 
     <!-- ЗАМЕНИ ССЫЛКУ НИЖЕ НА СВОЮ -->
-    <a class="btn" href="https://t.me/astropulse_official" rel="noopener" target="_blank" aria-label="Перейти в канал в Telegram">
+    <a class="btn" href="https://t.me/goroskop_brean" rel="noopener" target="_blank" aria-label="Перейти в канал в Telegram">
       Перейти в канал
     </a>
 
     <div class="wish">✨ Загадать желание</div>
     <div class="sub">Ты — один из тех, кто чувствует вибрации Вселенной. Мы ждём тебя.</div>
 
-    <div class="foot">© AstroPulse</div>
+    <div class="foot">© Звезды и Числа</div>
   </main>
 </body>
 </html>

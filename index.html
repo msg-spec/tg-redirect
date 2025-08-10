@@ -1,81 +1,132 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Звезды и Числа | Переход в бота</title>
-  <meta name="description" content="Внимание! TikTok блокирует переход в Telegram. Открой в браузере, затем нажми кнопку." />
-  <meta property="og:title" content="Звезды и Числа | Переход в бота" />
-  <meta property="og:description" content="Внимание! TikTok блокирует переход в Telegram. Открой в браузере, затем нажми кнопку." />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#000000" />
-  <style>
-    :root { --bg:#0b0b0b; --text:#f3f3f3; --muted:#b3b3b3; --accent:#ffffff; --btn:#ffffff; --btnText:#000000; --ring:rgba(255,255,255,.3); }
-    * { box-sizing: border-box; }
-    html,body { height:100%; }
-    body {
-      margin:0; background: radial-gradient(1200px 800px at 50% -10%, #1a1a1a, var(--bg));
-      color:var(--text); font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
-      display:flex; align-items:center; justify-content:center; padding:24px;
-    }
-    .card {
-      width:100%; max-width:560px; background: rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:28px 24px 20px;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.05);
-    }
-    h1 { margin:0 0 16px; font-size:22px; letter-spacing:.2px; }
-    .alert { font-weight:600; margin-bottom:10px; }
-    .steps { margin:0 0 18px; color:var(--muted); }
-    .steps li { margin:6px 0; }
-    .btn {
-      display:inline-block; width:100%; text-align:center; text-decoration:none;
-      background:var(--btn); color:var(--btnText); font-weight:700; padding:14px 18px; border-radius:14px;
-      box-shadow: 0 10px 30px rgba(255,255,255,.12);
-      transition: transform .08s ease, box-shadow .2s ease;
-      border:1px solid rgba(255,255,255,.5);
-    }
-    .btn:focus-visible { outline: none; box-shadow: 0 0 0 6px var(--ring); }
-    .btn:hover { transform: translateY(-1px); box-shadow: 0 14px 36px rgba(255,255,255,.18); }
-    .sub {
-      margin-top:16px; text-align:center; color:var(--muted); font-size:14px;
-    }
-    .wish { margin-top:6px; text-align:center; font-size:14px; opacity:.9; }
-    .foot { margin-top:16px; text-align:center; font-size:13px; color:var(--muted); }
-    .dotlist { list-style:none; padding:0; }
-    .dotlist li::before { content:"•"; margin-right:8px; }
-  </style>
-  <script>
-    // Если открыто внутри WebView TikTok — мягкое напоминание открыть в браузере
-    document.addEventListener('DOMContentLoaded', () => {
-      const ua = navigator.userAgent.toLowerCase();
-      if (ua.includes('tiktok')) {
-        document.title = 'Открой в браузере → затем переход';
-      }
-    });
-  </script>
-</head>
-<body>
-  <main class="card" role="main" aria-label="Инструкция перехода в Telegram">
-    <h1>Звезды и Числа | Переход в бота</h1>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Звезды и Числа — переход в Telegram</title>
+<meta name="description" content="Если открыли из TikTok/Instagram — раскройте в браузере, затем нажмите кнопку ниже.">
+<meta property="og:title" content="Звезды и Числа — переход в Telegram">
+<meta property="og:description" content="Открой в браузере, затем нажми кнопку.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b0b0f">
+<style>
+  /* ---------- Theme ---------- */
+  :root{
+    --bg:#0b0b0f; --bg2:#0e1220; --card:rgba(255,255,255,.04);
+    --text:#f4f5f7; --muted:#b9bfd2; --accent:#fbd38d;
+    --ring:rgba(251,211,141,.35); --btn:#fff; --btnText:#000;
+  }
+  * { box-sizing:border-box }
+  html,body { height:100% }
+  body{
+    margin:0; color:var(--text);
+    font:16px/1.55 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial;
+    display:flex; align-items:center; justify-content:center; padding:28px;
+    background: radial-gradient(1200px 800px at 50% -10%, #151726, var(--bg));
+    overflow:hidden;
+  }
 
-    <div class="alert">Внимание! TikTok блокирует переход в Telegram.</div>
-    <div class="steps">Чтобы всё работало:</div>
-    <ul class="dotlist steps" aria-label="Шаги">
-      <li>Нажми <strong>•••</strong> (правый верхний угол)</li>
-      <li>Выбери <strong>«Открыть в браузере»</strong></li>
-      <li>И только потом нажми кнопку</li>
-    </ul>
+  /* ---------- Cosmic layers (pure CSS) ---------- */
+  .sky, .aurora, .dust { position:fixed; inset:-10vmax; pointer-events:none; }
+  .sky{
+    background:
+      radial-gradient(2px 2px at 10% 20%, #ffffffbb 40%, transparent 41%) repeat,
+      radial-gradient(2px 2px at 80% 30%, #ffffff88 40%, transparent 41%) repeat,
+      radial-gradient(1px 1px at 30% 70%, #ffffff66 40%, transparent 41%) repeat;
+    background-size: 260px 260px, 320px 320px, 200px 200px;
+    animation: twinkle 6s linear infinite;
+    opacity:.55;
+    filter: drop-shadow(0 0 6px rgba(255,255,255,.12));
+  }
+  @keyframes twinkle { to { transform: translate3d(0,0,0) rotate(0.0001deg); filter:brightness(1.08);} }
 
-    <!-- ЗАМЕНИ ССЫЛКУ НИЖЕ НА СВОЮ -->
-    <a class="btn" href="https://t.me/goroskop_brean" rel="noopener" target="_blank" aria-label="Перейти в канал в Telegram">
-      Перейти в канал
-    </a>
+  .aurora{
+    background:
+      radial-gradient(70vmax 40vmax at 20% -10%, rgba(116, 86, 255,.25), transparent 60%),
+      radial-gradient(70vmax 40vmax at 80% 110%, rgba(255, 120, 180,.18), transparent 60%),
+      conic-gradient(from 180deg at 50% 50%, rgba(100,220,255,.08), rgba(255,200,120,.06), rgba(180,120,255,.09), rgba(100,220,255,.08));
+    filter: blur(60px) saturate(1.2);
+    mix-blend-mode: screen;
+    animation: aurora 24s ease-in-out infinite alternate;
+  }
+  @keyframes aurora { 0%{transform:translateY(-2%) scale(1.05)} 100%{transform:translateY(2%) scale(1.12)} }
 
-    <div class="wish">✨ Загадать желание</div>
-    <div class="sub">Ты — один из тех, кто чувствует вибрации Вселенной. Мы ждём тебя.</div>
+  .dust{
+    background:
+      radial-gradient(1000px 400px at 50% 120%, rgba(251,211,141,.12), transparent 60%),
+      radial-gradient(800px 300px at 0% 0%, rgba(120,200,255,.10), transparent 60%);
+    filter: blur(30px);
+    opacity:.7;
+    animation: float 18s ease-in-out infinite alternate;
+  }
+  @keyframes float { from{transform:translateY(0)} to{transform:translateY(-2%)} }
 
-    <div class="foot">© Звезды и Числа</div>
-  </main>
-</body>
-</html>
+  /* ---------- Card ---------- */
+  .card{
+    position:relative; z-index:2;
+    width:min(620px, 100%); padding:28px 22px 22px;
+    background: var(--card);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:22px;
+    backdrop-filter: blur(10px) saturate(1.1);
+    box-shadow:
+      0 30px 80px rgba(0,0,0,.55),
+      inset 0 1px 0 rgba(255,255,255,.08);
+  }
+  header{
+    display:flex; align-items:center; gap:14px; margin-bottom:14px;
+  }
+  .logo{
+    width:40px; height:40px; border-radius:50%;
+    background: radial-gradient(circle at 35% 35%, #fff, #ffe9c0 45%, #e1bfff 70%, transparent 72%);
+    box-shadow: 0 0 24px rgba(251,211,141,.35);
+    position:relative; overflow:hidden;
+  }
+  .logo:after{
+    content:""; position:absolute; inset:0;
+    background:
+      radial-gradient(10px 10px at 65% 35%, #0000, #0000 40%, #ffffff55 41%, #0000 44%),
+      radial-gradient(10px 10px at 35% 65%, #0000, #0000 40%, #ffffff55 41%, #0000 44%);
+    opacity:.7;
+  }
+  h1{ margin:0; font-size:22px; letter-spacing:.3px }
+  .eyebrow{ font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted) }
+
+  .notice{
+    margin:6px 0 12px; padding:10px 12px;
+    border:1px dashed rgba(251,211,141,.35);
+    border-radius:12px; background:rgba(251,211,141,.06);
+  }
+
+  .steps{ margin:0 0 16px; padding-left:18px; color:var(--muted) }
+  .steps li{ margin:6px 0 }
+
+  /* ---------- Button ---------- */
+  .cta{
+    position:relative; display:block; width:100%;
+    text-align:center; text-decoration:none;
+    background:var(--btn); color:var(--btnText);
+    font-weight:800; letter-spacing:.2px;
+    padding:16px 18px; border-radius:16px;
+    border:1px solid rgba(255,255,255,.6);
+    box-shadow: 0 14px 40px rgba(251,211,141,.25);
+    transition: transform .1s ease, box-shadow .25s ease;
+  }
+  .cta:hover{ transform:translateY(-1px); box-shadow:0 18px 48px rgba(251,211,141,.33) }
+  .cta:focus-visible{ outline:none; box-shadow: 0 0 0 8px var(--ring) }
+
+  /* Shine */
+  .cta .shine{
+    position:absolute; inset:0; border-radius:inherit; overflow:hidden; pointer-events:none;
+  }
+  .cta .shine::after{
+    content:""; position:absolute; top:-120%; left:-30%;
+    width:60%; height:300%;
+    transform: rotate(25deg);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.6), transparent);
+    animation: shine 3.5s ease-in-out infinite;
+  }
+  @keyframes shine { 0%{transform:translateX(-120%) rotate(25deg)} 60%{transform:translateX(240%) rotate(25deg)} 100%{transform:translateX(240%) rotate(25deg)} }
+
+  /* Sub actions */
+  .actio
